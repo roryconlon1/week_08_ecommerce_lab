@@ -5,17 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: repeating-radial-gradient(
-  circle,
-  green,
-  green 10px,
-  white 10px, 
-  white 20px
-);
-
+  background-color: #E15D44;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+
+/* background-repeat: no-repeat; */

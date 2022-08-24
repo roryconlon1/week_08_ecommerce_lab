@@ -1,38 +1,65 @@
 import React, { useState } from "react";
 import FavouriteProduct from "../Components/FavouriteProduct";
 import ProductList from "../Components/ProductList";
+import styled from "styled-components";
 
 const ShopContainer = () => {
 
     const products =[
-        {name: "Football", price: 15},
-        {name: "Celtic Home Top", price: 67},
-        {name: "Hoopy The Hound Soft Toy", price: 12},
-        {name: "Adidas Predators", price: 55},
-        {name: "5-a-side Goals", price: 100},
-        {name: "Bibs x 5", price: 30},
-        {name: "Celtic Away Top", price: 67},
-        {name: "Celtic 3rd Top", price: 67},
+        {name: "Football", price: 15.12},
+        {name: "Celtic Home Top", price: 67.88},
+        {name: "Hoopy The Hound Soft Toy", price: 12.75},
+        {name: "Adidas Predators", price: 80.70},
+        {name: "5-a-side Goals", price: 99.99},
+        {name: "Bibs x 5", price: 8.5},
+        {name: "Celtic Away Top", price: 67.88},
+        {name: "Celtic 3rd Top", price: 67.88},
     ]
     const [favouriteProduct, setFavouriteProduct] = useState([])
 
     const onFavouriteUpdate = (newProduct) => {
-        newProduct.id = Date.now()
         const alreadyInBasket = favouriteProduct.filter(product => product.name === newProduct.name).length > 0
-        if (alreadyInBasket){return}
+        if (alreadyInBasket){return "naw"}
         const updatedFavourite = [...favouriteProduct, newProduct]
         setFavouriteProduct(updatedFavourite)
         
     }
-    console.log(favouriteProduct);
+    console.log(favouriteProduct)
+
+    const Header = styled.header`
+    background-color: #E15D44;
+    margin: 0;
+    padding: .5em;
+    font-size: 3em;
+    color: orange;
+
+    
+
+    background: repeating-radial-gradient(
+        circle,
+        #018749,
+        #018749 10px,
+        white, 
+        #DEA96B 20px
+      );`
+
+    const Text = styled.h1`
+    border: 3px
+    background-color: black;
+    text-shadow: 4px 4px #ff0000;`
+
+    const ProductHeader = styled.h2`
+    text-decoration: underline;
+    font-size: 50px`
 
     return(
         <div>
-            <h1>
-                Sellick Shop
-            </h1>
-            <ProductList onFavouriteUpdate={onFavouriteUpdate} product={products}/>
-            {favouriteProduct ? <FavouriteProduct favouriteProduct={favouriteProduct}/>: null}
+            <Header>
+                <Text>Sellick Shop</Text>
+            </Header>
+            <ProductHeader>All Products:</ProductHeader>
+            <p><ProductList onFavouriteUpdate={onFavouriteUpdate} product={products} favouriteProduct={favouriteProduct}/></p>
+            {/* {favouriteProduct ? <FavouriteProduct favouriteProduct={favouriteProduct}/>: null} */}
         </div>
     )
 }

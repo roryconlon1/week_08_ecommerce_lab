@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 
 const ProductListItem = ({item, onFavouriteUpdate}) => {
 
@@ -6,13 +7,23 @@ const ProductListItem = ({item, onFavouriteUpdate}) => {
         onFavouriteUpdate(item)
     }
 
+    const ListItem = styled.li`
+    display: flex;
+    justify-content: space-between;
+    padding: 5px`
+
+    const AllSpan = styled.span`
+    margin-left: auto;
+    margin-right: 5px;`
+    
+
     return(
         <div>
-            <li>
-                {item.name}
-                £ {item.price}<button onClick={handleClick}>Add to Cart</button>
+            <ListItem>
+                {item.name} <AllSpan>£{item.price}</AllSpan>
+                <button onClick={handleClick}>Add to Cart</button>
                 
-            </li>
+            </ListItem>
         </div>
     )
 
