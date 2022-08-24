@@ -23,10 +23,10 @@ margin-left: 25%;
 margin-right: 25%;
 margin-bottom: 5%;`
 
-const ProductList = ({product, onFavouriteUpdate, favouriteProduct}) => {
+const ProductList = ({product, onFavouriteUpdate, favouriteProduct, setSelectAmount}) => {
 
     const showProducts = product.map((item, index) => {
-        return <ProductListItem key={index} index={item.index} item={item} onFavouriteUpdate={onFavouriteUpdate}/>
+        return <ProductListItem key={index} index={item.index} item={item} onFavouriteUpdate={onFavouriteUpdate} setSelectAmount={setSelectAmount}/>
     })
 
 

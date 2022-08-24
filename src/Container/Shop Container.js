@@ -38,10 +38,11 @@ const ShopContainer = () => {
     ]
 
     const [favouriteProduct, setFavouriteProduct] = useState([])
+    const [selectAmount, setSelectAmount] = useState()
 
     const onFavouriteUpdate = (newProduct) => {
         const alreadyInBasket = favouriteProduct.filter(product => product.name === newProduct.name).length > 0
-        if (alreadyInBasket) { return "naw" }
+        if (alreadyInBasket) {return}
         const updatedFavourite = [...favouriteProduct, newProduct]
         setFavouriteProduct(updatedFavourite)
     }
@@ -53,7 +54,7 @@ const ShopContainer = () => {
                 <Text>Sellick Shop</Text>
             </Header>
             <ProductHeader>All Products:</ProductHeader>
-            <ProductList onFavouriteUpdate={onFavouriteUpdate} product={products} favouriteProduct={favouriteProduct} />
+            <ProductList onFavouriteUpdate={onFavouriteUpdate} product={products} favouriteProduct={favouriteProduct} setSelectAmount={setSelectAmount} />
         </div>
     )
 }
