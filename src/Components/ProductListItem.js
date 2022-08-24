@@ -1,20 +1,21 @@
 import React from "react";
 import styled from "styled-components";
 
+const ListItem = styled.li`
+display: flex;
+justify-content: space-between;
+padding: 5px`
+
+const AllSpan = styled.span`
+margin-left: auto;
+margin-right: 5px;`
+
 const ProductListItem = ({item, onFavouriteUpdate}) => {
 
     const handleClick = () => {
         onFavouriteUpdate(item)
     }
 
-    const ListItem = styled.li`
-    display: flex;
-    justify-content: space-between;
-    padding: 5px`
-
-    const AllSpan = styled.span`
-    margin-left: auto;
-    margin-right: 5px;`
     
 
     return(
