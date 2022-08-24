@@ -13,9 +13,18 @@ margin-right: 5px;`
 const AddtoCartButton = styled.button`
 border-radius: 6px;
 box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-background-color: #4CAF50; /* Green */
-border: none;
+background-color: #018749; 
 color: white;
+padding: 15px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;`
+
+const SelectAmountOfItems = styled.select`
+border-radius: 6px;
+box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+color: #018749;
 padding: 15px 32px;
 text-align: center;
 text-decoration: none;
@@ -58,10 +67,10 @@ const ProductListItem = ({item, onFavouriteUpdate, setSelectAmount}) => {
             <ListItem>
                 {item.name} <AllSpan>£{item.price}</AllSpan>
                 <AddtoCartButton onClick={handleClick}>Add to Cart</AddtoCartButton>
-                <select defaultValue="" onChange={handleChange}>
+                <SelectAmountOfItems defaultValue="" onChange={handleChange}>
                 <option value="">Choose an Amount</option>
                 {allNumbers}
-                </select>               
+                </SelectAmountOfItems>               
             </ListItem>
         </div>
     )
