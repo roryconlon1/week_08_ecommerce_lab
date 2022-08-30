@@ -51,7 +51,7 @@ const ShopContainer = () => {
     return (
         <div>
             <Header>
-                <Text>Sellick Shop</Text>
+                <Text>Football Shop</Text>
             </Header>
             <ProductHeader>All Products:</ProductHeader>
             <ProductList onFavouriteUpdate={onFavouriteUpdate} product={products} favouriteProduct={favouriteProduct} setSelectAmount={setSelectAmount} />
